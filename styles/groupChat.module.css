@@ -1,0 +1,567 @@
+.container {
+  position: absolute;
+  left: 33.333vw;
+  top: 0%;
+  width: 66.666vw;
+  height: 100vh;
+  z-index: 1002;
+  /* display: none; */
+  font-size: 1.6rem;
+  background-image: url(../public/default-wallpaper.png);
+  transition: all 0.2s;
+}
+.hide__container .container {
+  display: none;
+}
+.groupInfo .container,
+.groupSearch .container,
+.groupMessageInfo .container {
+  width: calc(60 / 100 * 66.666vw);
+}
+.header {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  height: 6rem;
+  width: 66.666vw;
+  background-color: rgb(209, 207, 207);
+  transition: all 0.2s;
+  z-index: 1000000;
+}
+.HiOutlineArrowLeft {
+  align-self: center;
+  display: none;
+}
+.groupInfo .header,
+.groupSearch .header,
+.groupMessageInfo .header {
+  width: calc(60 / 100 * 66.666vw);
+}
+
+.user_info {
+  display: grid;
+  grid-template-columns: 4rem 5fr;
+  column-gap: 1rem;
+  align-items: center;
+}
+.user_info div {
+  width: fit-content;
+  width: 50vw;
+}
+.groupInfo .user_info div,
+.groupSearch .user_info div,
+.groupMessageInfo .user_info div {
+  width: calc(50 / 100 * 50vw);
+}
+.user_info img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  justify-self: center;
+}
+.user_info div h1 {
+  margin: 0%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.participants {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
+  height: 2rem;
+}
+.participants span {
+  font-size: 1.2rem;
+}
+.three_dots {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.showBox .three_dots {
+  background-color: rgb(172, 170, 170);
+}
+.header_icons {
+  justify-self: flex-end;
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.header_icons > * {
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0s 0.5s;
+}
+
+.header_icons > *:active {
+  background-color: rgb(172, 170, 170);
+  transition: 0s;
+}
+.header_icons span {
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(80, 80, 80);
+}
+.header_icons span:nth-child(2) {
+  margin: 0.2rem 0;
+}
+
+.box {
+  position: absolute;
+  background-color: #eee;
+  top: 5.5rem;
+  right: 2rem;
+  z-index: 1000002;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 0.4rem;
+  box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  transform: scale(0);
+  transform-origin: right top;
+  overflow: hidden;
+}
+.showBox .box {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.box > * {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.box > *:hover {
+  cursor: pointer;
+  background-color: rgb(209, 207, 207);
+}
+.body {
+  position: relative;
+  top: 6rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: transparent;
+  height: calc(100vh - 12rem);
+  padding: 2rem;
+}
+.body input {
+  visibility: hidden;
+  opacity: 0;
+}
+.check_label {
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid rgb(80, 80, 80);
+  border-radius: 0.3rem;
+  background-color: transparent;
+  transition: all 0.2s;
+  transform: translateX(-10rem);
+}
+.selectGroupMessages .check_label {
+  transform: translateX(3rem);
+}
+.checked .check_label {
+  background-color: #00bfa5;
+  border: none;
+}
+.BiCheck {
+  position: relative;
+  cursor: pointer;
+}
+.BiCheck > * {
+  position: absolute;
+}
+.check {
+  transform: rotate(-2deg) translate(2.7rem, -0.3rem);
+  opacity: 0;
+  visibility: hidden;
+}
+.checked .check {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1005;
+}
+.left_text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 66.666vw;
+  height: max-content;
+  padding: 2rem 0;
+  transform: translateX(-2.5rem);
+}
+
+.groupInfo .left_text,
+.groupSearch .left_text,
+.groupMessageInfo .left_text {
+  width: calc(60 / 100 * 66.666vw);
+}
+.selectGroupMessages .left_text:hover {
+  background-color: rgba(0, 150, 136, 0.08);
+  cursor: pointer;
+}
+.checked .left_text {
+  background-color: rgba(0, 150, 136, 0.1);
+}
+.left_text .message {
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  padding: 0.5rem;
+  width: fit-content;
+  max-width: 60%;
+  min-width: 13vw;
+  background-color: #eee;
+  transform: translateX(0);
+  transition: all 0.2s;
+  display: grid;
+  grid-template-rows: 1fr max-content 0.2fr;
+}
+
+.right_text .message::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  right: 0;
+  top: 0;
+  background-color: #dcf8c6;
+  transform: translateX(0.8rem);
+  clip-path: polygon(100% 0, 0 0, 0 99%);
+}
+.left_text .message::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  left: 0;
+  top: 0;
+  background-color: #eee;
+  transform: translateX(-0.8rem);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+.left_text p,
+.right_text p {
+  margin: 0%;
+}
+.date {
+  justify-self: flex-end;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.left_text .name {
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.5rem);
+  font-weight: 700;
+  z-index: 100;
+}
+
+.selectGroupMessages .message {
+  transform: translateX(5rem);
+}
+
+.right_text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 66.666vw;
+  height: max-content;
+  padding: 2rem 0;
+  transform: translateX(-2.5rem);
+}
+.right_text .date {
+  transform: translateY(0.5rem);
+  display: flex;
+}
+.right_text .date span:last-child {
+  transform: translateX(0.5rem);
+}
+.groupInfo .right_text,
+.groupSearch .right_text,
+.groupMessageInfo .right_text {
+  width: calc(60 / 100 * 66.666vw);
+}
+.selectGroupMessages .right_text:hover {
+  background-color: rgba(0, 150, 136, 0.08);
+  cursor: pointer;
+}
+.checked .right_text {
+  background-color: rgba(0, 150, 136, 0.1);
+}
+.right_text .message {
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  padding: 1rem;
+  width: fit-content;
+  max-width: 60%;
+  min-width: 13vw;
+  background-color: #dcf8c6;
+  display: grid;
+  grid-template-rows: max-content 0.2fr;
+  transform: translateX(-2rem);
+}
+
+.grpScrollMsg,
+.grpScrollMsg.message::after {
+  animation-name: scrollMsgAnime;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+.input {
+  position: fixed;
+  bottom: 0%;
+  width: 66.666%;
+  height: 6rem;
+  background-color: rgb(209, 207, 207);
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.groupInfo .input,
+.groupSearch .input,
+.groupMessageInfo .input {
+  width: calc(60 / 100 * 66.666vw);
+}
+.input input {
+  border: none;
+  width: 90%;
+  justify-self: flex-end;
+  border-radius: 50rem;
+  padding: 1rem;
+}
+.MdSend {
+  justify-self: center;
+  background-color: rgb(168, 233, 104);
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.MdSend:hover {
+  background-color: rgb(131, 238, 25);
+}
+
+.select_box {
+  display: grid;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  position: fixed;
+  bottom: 0%;
+  right: 0;
+  width: 66.666vw;
+  background-color: rgb(209, 207, 207);
+  height: 6rem;
+  align-items: center;
+  transform: translateY(10rem);
+  transition: all 0.2s;
+}
+
+.select_box > *:not(:nth-child(2)) {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0s 0.5s;
+}
+
+.select_box > *:not(:nth-child(2)):active {
+  background-color: rgb(172, 170, 170);
+  transition: 0s;
+}
+.groupInfo .select_box,
+.groupSearch .select_box,
+.groupMessageInfo .select_box {
+  width: calc(60 / 100 * 66.666vw);
+  right: calc(40 / 100 * 66.666vw);
+}
+.selectGroupMessages .select_box {
+  transform: translateY(0rem);
+}
+
+.cancel {
+  justify-self: center;
+  cursor: pointer;
+}
+
+.cancel p,
+.cancel p::after {
+  width: 2rem;
+  height: 2px;
+  background-color: rgb(80, 80, 80);
+  display: block;
+  transform: rotate(135deg);
+  justify-self: center;
+}
+
+.cancel p::after {
+  content: "";
+  transform: rotate(90deg) translateX(-2.2rem);
+}
+.scroll_bottom {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 8rem;
+  right: 2rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+.setShowScroll .scroll_bottom {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.spinner {
+  position: fixed;
+  top: 6rem;
+  right: 0;
+  width: 66.666vw;
+  height: calc(100vh - 6rem);
+  z-index: 1000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #eee;
+  font-size: 1.4rem;
+}
+@keyframes scrollMsgAnime {
+  50% {
+    background-color: rgb(94, 91, 91);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    width: 100vw;
+    left: 0;
+    grid-template-columns: 0.5fr 5fr 1fr;
+  }
+  .header > *:first-child {
+    justify-self: center;
+  }
+  .header_icons {
+    width: 150%;
+    transform: translateX(-1rem);
+  }
+  .HiOutlineArrowLeft {
+    display: block;
+    cursor: pointer;
+  }
+  .user_info {
+    grid-template-columns: 1fr 9fr;
+  }
+  .container {
+    width: 100vw;
+    left: 0;
+  }
+  .groupInfo .right_text,
+  .groupSearch .right_text,
+  .groupMessageInfo .right_text {
+    width: 60vw;
+  }
+  .right_text {
+    width: 100vw;
+  }
+  .groupInfo .left_text,
+  .groupSearch .left_text,
+  .groupMessageInfo .left_text {
+    width: 60vw;
+  }
+  .right_text .message {
+    max-width: 85%;
+    min-width: 30%;
+  }
+  .left_text .message {
+    max-width: 85%;
+    transform: translateX(1rem);
+    min-width: 30%;
+  }
+  .left_text {
+    width: 100vw;
+  }
+  .input {
+    width: 100vw;
+  }
+  .select_box {
+    width: 100vw;
+    grid-template-columns: 1fr max-content repeat(4, 1fr);
+    justify-items: center;
+  }
+
+  .spinner {
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .user_info {
+    column-gap: 1rem;
+  }
+  .header_icons {
+    /* width: 145%; */
+    transform: translateX(0);
+  }
+  .body {
+    padding: 1rem;
+  }
+  .input {
+    grid-template-columns: 7fr 1.5fr;
+  }
+  .input input {
+    width: 85%;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .right_text .message,
+  .left_text .message {
+    min-width: 35%;
+  }
+  .right_text .message {
+    transform: translateX(-1rem);
+  }
+  .left_text .message {
+    transform: translateX(1.5rem);
+  }
+}

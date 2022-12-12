@@ -1,0 +1,76 @@
+.container {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+.container__show.container {
+  opacity: 1;
+  visibility: visible;
+}
+.body {
+  border-radius: 3px;
+  box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19),
+    0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  background-color: #fff;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  height: 30vh;
+  width: 40vw;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+.container__show .body {
+  transform: scale(1);
+}
+.body > * {
+  padding: 2rem;
+}
+.buttons {
+  justify-self: end;
+}
+.buttons > * {
+  margin-right: 0.5rem;
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+}
+
+.buttons > *:first-child {
+  background-color: #fff;
+  transition: all 0.2s;
+  cursor: pointer;
+  color: #05cd51;
+}
+
+.buttons > *:last-child {
+  background-color: #05cd51;
+  transition: all 0.2s;
+  cursor: pointer;
+  color: #fff;
+}
+.buttons > *:hover {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1125px) {
+  .body {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .body {
+    width: 80vw;
+  }
+}

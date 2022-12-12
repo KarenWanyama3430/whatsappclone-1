@@ -1,0 +1,137 @@
+.container {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 33.333%;
+  height: 100vh;
+  background-color: #eee;
+  z-index: 103;
+  font-size: 1.6rem;
+  display: grid;
+  grid-template-rows: 2fr 4fr 4fr;
+  transition: all 0.2s;
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+.container__show .container {
+  transform: translateX(0%);
+  opacity: 1;
+  visibility: visible;
+}
+.header {
+  background-color: #00bfa5;
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+  align-items: flex-end;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.header div:first-child {
+  justify-self: center;
+  transform: translateY(-3.3rem);
+  cursor: pointer;
+}
+.header > * {
+  transform: translateY(-3rem);
+}
+
+.group_pfp {
+  align-self: center;
+  justify-self: center;
+}
+
+.group_pfp img {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+}
+
+.input {
+  justify-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 50%;
+}
+
+.input input {
+  border: none;
+  background-color: transparent;
+  width: 30rem;
+  z-index: 10;
+}
+
+.input span {
+  display: block;
+  width: 30rem;
+  height: 2px;
+  background-color: #00bfa5;
+  transform: translateY(-1.5rem);
+}
+
+.transform {
+  transform: translate(-19.7rem, -2rem);
+  z-index: 1;
+  transition: all 0.2s;
+  color: rgba(0, 0, 0, 0.5);
+}
+.transform__up {
+  transform: translate(-21.6rem, -4rem) !important;
+  font-size: 1.3rem;
+  z-index: 1;
+  transition: all 0.2s;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.checkmark {
+  align-self: center;
+  transform: translate(2rem, 2rem) scale(0);
+  height: 4.5rem;
+  width: 4.5rem;
+  background-color: #09e85e;
+  color: #fff;
+  border-radius: 50rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+
+.checkmark__show .checkmark {
+  opacity: 1;
+  transform: translate(2rem, 2rem) scale(1);
+  visibility: visible;
+}
+
+.loading .checkmark {
+  background-color: rgba(9, 232, 94, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+  }
+  .input {
+    align-items: center;
+  }
+  .transform {
+    transform: translate(-9.8rem, -2rem);
+  }
+  .transform__up {
+    transform: translate(-11rem, -4rem) !important;
+  }
+  .checkmark {
+    transform: translate(0rem, 2rem) scale(0);
+  }
+  .checkmark__show .checkmark {
+    transform: translate(0rem, 2rem) scale(1);
+  }
+}

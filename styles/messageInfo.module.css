@@ -1,0 +1,170 @@
+.container {
+  position: fixed;
+  height: calc(100vh - 6rem);
+  width: 26.75vw;
+  background-color: #eee;
+  top: 6rem;
+  right: 0;
+  color: black;
+  font-size: 1.4rem;
+  line-height: 2;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.container div:not(:first-child) {
+  animation-name: messageAnime;
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-fill-mode: backwards;
+}
+.header {
+  position: fixed;
+  top: 0%;
+  right: 0;
+  background-color: rgb(209, 207, 207);
+  height: 6rem;
+  width: 26.75vw;
+  display: flex;
+  align-items: center;
+}
+.header p {
+  transform: translateX(4vw);
+}
+.header p:first-child {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0s 0.5s;
+}
+.header p:first-child:active {
+  background-color: rgb(172, 170, 170);
+  transition: 0s;
+}
+.header p:last-child {
+  transform: translateX(6vw);
+}
+
+.x_1,
+.x_1::after {
+  width: 2rem;
+  height: 2px;
+  border-radius: 0.8rem;
+  transform: rotate(135deg);
+  display: block;
+  background-color: rgb(80, 80, 80);
+}
+
+.x_1::after {
+  content: "";
+  transform: translateY(-19px) rotate(90deg);
+}
+.rotate > * {
+  display: block;
+  background-color: rgb(80, 80, 80);
+}
+.rotate {
+  cursor: pointer;
+  animation: none;
+  margin: 0%;
+}
+.message {
+  height: calc(50vh - 6rem);
+  overflow-y: scroll;
+  background-image: url(../public/default-wallpaper.png);
+  padding: 3rem 0 3rem 3rem;
+}
+.message p {
+  border-radius: 0.75rem;
+  background-color: #dcf8c6;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  width: 85%;
+  max-width: 30vw;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.message p::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  right: 0;
+  top: 0;
+  background-color: #dcf8c6;
+  transform: translateX(0.8rem);
+  clip-path: polygon(100% 0, 0 0, 0 99%);
+}
+.message p span:last-child {
+  align-self: flex-end;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+}
+.message_info {
+  display: grid;
+  grid-template-rows: 15vh 15vh;
+}
+.message_info div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.message_info p {
+  transform: translateX(2vw);
+  margin: 0%;
+}
+.message_info div:last-child {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.message_info > * {
+  background-color: #fff;
+}
+.message_info div:not(:last-child) {
+  border-bottom: 1px solid rgb(202, 202, 202);
+}
+.time {
+  font-size: 1.4rem;
+  color: rgb(80, 80, 80);
+}
+.metadata {
+  display: flex;
+}
+
+@keyframes messageAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+  .container {
+    width: 66.666vw;
+    z-index: 1000;
+  }
+  .header {
+    width: 66.666vw;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+    z-index: 1000;
+  }
+  .header {
+    width: 100vw;
+  }
+  .message p {
+    max-width: 65vw;
+  }
+}

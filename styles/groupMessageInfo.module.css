@@ -1,0 +1,178 @@
+.container {
+  width: 0;
+  height: 100vh;
+  background-color: #eee;
+  font-size: 1.6rem;
+  position: fixed;
+  right: 0;
+  top: 0%;
+  z-index: 1100;
+  transition: all 0.2s;
+}
+.groupMessageInfo .container {
+  width: 26.75vw;
+}
+.header {
+  background-color: rgb(209, 207, 207);
+  position: absolute;
+  top: 0%;
+  right: 0;
+  width: 0;
+  height: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  z-index: 1100;
+  transition: all 0.2s;
+}
+.header p {
+  margin: 0%;
+}
+
+.groupMessageInfo .header {
+  width: 26.75vw;
+}
+.cancel {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.cancel p,
+.cancel p::after {
+  position: relative;
+  left: 2rem;
+  width: 2rem;
+  height: 2px;
+  background-color: rgb(80, 80, 80);
+  transform: rotate(135deg);
+}
+.cancel p::after {
+  content: "";
+  display: block;
+  transform: translate(-20px, -22px) rotate(90deg);
+}
+.body {
+  position: relative;
+  top: 6rem;
+  display: grid;
+  grid-template-rows: calc(40vh - 3rem) calc(60vh - 3rem);
+  row-gap: 1rem;
+}
+.message {
+  overflow-y: scroll;
+  background-image: url(../public/default-wallpaper.png);
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.message div {
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  padding: 1rem;
+  max-width: 75vw;
+  min-width: 24vw;
+  background-color: #dcf8c6;
+  display: grid;
+  position: relative;
+  grid-template-rows: max-content 0.2fr;
+  align-self: flex-start;
+}
+
+.message div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  right: 0;
+  top: 0;
+  background-color: #dcf8c6;
+  transform: translateX(0.8rem);
+  clip-path: polygon(100% 0, 0 0, 0 99%);
+}
+.msg_date {
+  justify-self: end;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.info {
+  overflow-y: scroll;
+  background-color: #fff;
+}
+.info p {
+  margin: 0;
+}
+.readByHeader,
+.deliveredToHeader {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.readByHeader p,
+.deliveredToHeader p {
+  color: #009688;
+}
+.contact {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  height: 6rem;
+  column-gap: 1rem;
+  cursor: pointer;
+}
+.contact:hover {
+  background-color: #eee;
+}
+.contact > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(1rem);
+}
+.contact div {
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+.profile_img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  align-self: center;
+}
+.name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 14%;
+}
+.date {
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1125px) {
+  .groupMessageInfo .container,
+  .groupMessageInfo .header {
+    width: 66.666vw;
+  }
+  .name {
+    width: 19%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .groupMessageInfo .container,
+  .groupMessageInfo .header {
+    width: 100vw;
+  }
+  .name {
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .name {
+    width: 15%;
+  }
+}

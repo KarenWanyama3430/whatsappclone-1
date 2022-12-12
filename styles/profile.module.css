@@ -1,0 +1,191 @@
+.container {
+  height: 100vh;
+  width: 33.333%;
+  background-color: #eee;
+  display: grid;
+  grid-template-rows: 12rem 25rem 11rem 6rem 15rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: fixed;
+  left: -100vw;
+  transition: all 0.2s cubic-bezier(0.98, -0.01, 0.83, 0.67);
+  z-index: 1;
+}
+.meta {
+  padding: 1rem 2rem;
+}
+.shown .container {
+  left: 0;
+}
+.icon {
+  background-color: #00bfa5;
+  display: flex;
+  align-items: flex-end;
+  color: #eee;
+}
+.icon div,
+.icon p {
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+}
+.icon div {
+  cursor: pointer;
+}
+
+.icon p {
+  font-weight: 500;
+  font-size: 1.9rem;
+  margin-bottom: 2.2rem;
+}
+
+.details {
+  background-color: #fff;
+  padding: 0rem 2rem;
+  border-top: 1px solid rgb(233, 230, 230);
+  border-bottom: 1px solid rgb(233, 230, 230);
+}
+
+.details h6 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #00bfa5;
+}
+.details_input {
+  border: none;
+  transform: translateY(-1rem);
+  width: 85%;
+}
+.status {
+  display: flex;
+}
+.status label > * {
+  position: absolute;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.input {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-1rem);
+}
+.input input {
+  width: 100%;
+  border: none;
+}
+.input label {
+  cursor: pointer;
+}
+.input label > * {
+  transition: opacity 0.5s, visibility 0.5s;
+  position: absolute;
+}
+.input_underline {
+  border-bottom: 2px solid #00bfa5;
+}
+.input_underline_last {
+  border-bottom: 2px solid #00bfa5;
+}
+.status_focused {
+  border-bottom: 2px solid #00bfa5;
+}
+.BsCheck {
+  opacity: 1;
+  visibility: visible;
+}
+.hideBsCheck {
+  opacity: 0;
+  visibility: hidden;
+}
+.BsCheck_last {
+  opacity: 1;
+  visibility: visible;
+}
+.hideBsCheck_last {
+  opacity: 0;
+  visibility: hidden;
+}
+.RiPencilFill {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hideRiPencilFill {
+  opacity: 0;
+  visibility: hidden;
+}
+.RiPencilFill_last {
+  opacity: 1;
+  visibility: visible;
+}
+.hideRiPencilFill_last {
+  opacity: 0;
+  visibility: hidden;
+}
+.BsCheck_status {
+  opacity: 1;
+  visibility: visible;
+}
+.hideBsCheck_status {
+  opacity: 0;
+  visibility: hidden;
+}
+.RiPencilFill_status {
+  opacity: 1;
+  visibility: visible;
+}
+.hideRiPencilFill_status {
+  opacity: 0;
+  visibility: hidden;
+}
+.name_info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
+}
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.animate {
+  animation-name: detAnime;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+.img_animate {
+  animation-name: imgAnime;
+  animation-duration: 0.5s;
+}
+
+@keyframes imgAnime {
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes detAnime {
+  0% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+  }
+}

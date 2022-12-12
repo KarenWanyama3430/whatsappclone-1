@@ -1,0 +1,181 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  font-size: 1.6rem;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(106, 209, 106),
+    rgb(66, 180, 66)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  height: 70vh !important;
+}
+
+.parent_form {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url(../public/whatsapp-promo.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
+}
+.form {
+  width: 60%;
+  height: 100%;
+  background-color: rgba(238, 238, 238, 0.8);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form h1 {
+  margin-left: 30%;
+  margin-bottom: 3%;
+  color: rgb(66, 180, 66);
+  font-size: 4rem;
+  /* font-weight: 300; */
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+.login_h1 {
+  margin-bottom: 10% !important;
+}
+
+.form p {
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+.form p > a {
+  color: rgb(106, 209, 106);
+  transition: all 0.2s;
+}
+.form p > a:hover {
+  color: rgb(66, 180, 66);
+}
+
+.input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 2px;
+  background-color: rgba(#fff, 0.5);
+  border-bottom: 3px solid transparent;
+  display: block;
+  width: 70%;
+  margin-left: 2rem;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(black, 0.1);
+  border-bottom: 3px solid rgb(85, 201, 85);
+  transition: all 0.8s;
+}
+
+.input:placeholder-shown ~ .form_label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.error {
+  color: red;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.form_group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form_label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.btn {
+  border: none !important;
+  padding: 1rem !important;
+  border-radius: 0.8rem !important;
+  margin-left: 2rem !important;
+  width: 70% !important;
+  cursor: pointer !important;
+  background-color: rgb(58, 179, 110) !important;
+  transition: all 0.65s !important;
+  position: relative !important;
+}
+.btn:after {
+  content: "" !important;
+  display: inline-block !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0.8rem !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: -1 !important;
+  transition: all 0.4s !important;
+  background-color: rgb(58, 179, 110) !important;
+  outline: none;
+}
+.btn:focus {
+  outline: none;
+}
+.btn::after:focus {
+  outline: none;
+}
+.btn:hover {
+  transform: translateY(-0.3rem) !important;
+  box-shadow: 0 10px 20px rgba(black, 0.2) !important;
+  background-color: seagreen !important;
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6) !important;
+  opacity: 0 !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .form {
+    width: 100%;
+    clip-path: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form_group {
+    width: 100%;
+    margin-left: 25vw;
+  }
+  .form h1 {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .form_group {
+    margin-left: 15vw;
+  }
+  .btn {
+    margin-left: -1rem !important;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "whatsapp-web",
+  "alias": "whatsapp-web.now.sh",
+  "version": 1,
+  "env": {
+    "MONGO_URI": "mongodb://mitakikelvin:iKEKmxMB5902LK5x@cluster0-shard-00-00.lsbwn.mongodb.net:27017,cluster0-shard-00-01.lsbwn.mongodb.net:27017,cluster0-shard-00-02.lsbwn.mongodb.net:27017/whatsapp?ssl=true&replicaSet=atlas-ajob3d-shard-0&authSource=admin&retryWrites=true&w=majority",
+    "COOKIE_SECRET": "kskjdhjkweuyiutiuhcxbiuweykjdshkjhsdkjhdskhkjdshkjhsdkjuihksdjhksdtueoi",
+    "JWT_KEY": "hjgsjhgdiweyiuhdsjkhkjhbnzbxmkhsdgkjhdskjhskdjhkjhiweuyuikjdsjmncbxchjgjhsgduyewnghdgiewupqwypihdsbgmnbmnvcxjfuet",
+    "NODE_ENV": "production"
+  }
+}

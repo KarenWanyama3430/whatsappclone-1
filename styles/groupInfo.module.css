@@ -1,0 +1,221 @@
+.container {
+  background-color: #eee;
+  width: 0;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0%;
+  z-index: 1002;
+  font-size: 1.6rem;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.hide__container .container {
+  display: none;
+}
+.showGroupInfo .container {
+  width: 26.75vw;
+}
+.header {
+  position: fixed;
+  top: 0%;
+  right: 0;
+  background-color: rgb(209, 207, 207);
+  height: 6rem;
+  width: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.showGroupInfo .header {
+  width: 26.75vw;
+}
+
+.header div {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header span,
+.header span::after {
+  display: inline-block;
+  width: 2rem;
+  height: 2px;
+  background-color: rgb(80, 80, 80);
+  transform: rotate(135deg);
+}
+.header span::after {
+  content: "";
+  transform: translateY(-1.6rem) rotate(90deg);
+}
+
+.body {
+  position: relative;
+  top: 6rem;
+  overflow-y: scroll;
+  height: calc(100vh - 6rem);
+  display: grid;
+  grid-template-rows: repeat(3, max-content) 7rem 0.1rem;
+  row-gap: 2rem;
+}
+.body > * {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.showGroupInfo .body > * {
+  animation-name: infoAnime;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  animation-duration: 0.5s;
+}
+.group_header {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+.group_header > *:first-child {
+  justify-self: center;
+}
+.group_header img {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+.group_header div {
+  padding: 2rem;
+}
+.group_header div p {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+}
+.description {
+  padding: 2rem;
+}
+.description h1 {
+  color: #00bfa5;
+}
+.input {
+  position: relative;
+}
+.input > *:not(input) {
+  cursor: pointer;
+  position: absolute;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.input input {
+  border: none;
+  width: 90%;
+  padding: 0.5rem 0;
+}
+.focused input {
+  border-bottom: 2px solid #00bfa5;
+}
+.RiPencilFill {
+  opacity: 1;
+  visibility: visible;
+}
+.BsCheck {
+  opacity: 0;
+  visibility: hidden;
+}
+.focused .RiPencilFill {
+  opacity: 0;
+  visibility: hidden;
+}
+.focused .BsCheck {
+  opacity: 1;
+  visibility: visible;
+}
+.loading .BsCheck,
+.loading .RiPencilFill {
+  opacity: 0;
+  visibility: hidden;
+}
+.IoIosArrowForward {
+  transform: translateY(-0.6rem) translateX(-3rem);
+  cursor: pointer;
+}
+
+/* .participants {
+} */
+.p_header {
+  padding: 2rem;
+}
+.participants h3 {
+  color: #00bfa5;
+}
+.participant {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  height: 6rem;
+  padding-left: 2rem;
+}
+.participant:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+.participant div {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.participant p {
+  transform: translateY(1rem);
+}
+.participant img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  align-self: center;
+}
+.exit {
+  padding: 2rem;
+  color: #df3333;
+}
+
+.exit:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+.exit div {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+}
+
+@keyframes infoAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+  .showGroupInfo .container {
+    width: 66.666vw;
+  }
+  .showGroupInfo .header {
+    width: 66.666vw;
+    grid-template-columns: 1fr 5fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .showGroupInfo .container {
+    width: 100vw;
+  }
+  .showGroupInfo .header {
+    width: 100vw;
+  }
+}

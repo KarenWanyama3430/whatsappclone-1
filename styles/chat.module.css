@@ -1,0 +1,622 @@
+.container {
+  /* background-color: rgb(189, 178, 178); */
+  background-image: url(../public/default-wallpaper.png);
+  background-repeat: repeat;
+  /* background-size: cover; */
+  background-attachment: fixed;
+  font-size: 1.1rem;
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+  row-gap: 0.5rem;
+  column-gap: 0.7rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  line-height: 1.5;
+  padding: 0 2rem;
+  width: 66.666%;
+  margin-left: 33.333%;
+  position: relative;
+  z-index: 1000;
+  transition: all 0.2s;
+  top: 6rem;
+  overflow-y: scroll;
+  height: calc(100vh - 12.8rem) !important;
+}
+/* .light_container .container {
+  opacity: 0.7;
+} */
+.contact_info .chatHeader {
+  width: calc(60 / 100 * 66.666%) !important;
+}
+.contact_info .container {
+  width: calc(60 / 100 * 66.666%);
+}
+.spinner {
+  /* background-color: rgb(189, 178, 178); */
+  background-color: #eee;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  padding: 0 2rem;
+  width: 70.666%;
+  height: 100vh;
+  margin-left: 33.333%;
+  z-index: 104000;
+  width: 66.666vw;
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.chatHeader {
+  background-color: rgb(209, 207, 207);
+  height: 6rem;
+  width: 66.7vw;
+  margin-left: -2rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  top: 0%;
+}
+/* .contact_info {
+  
+} */
+.contact_info_header {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 2fr;
+  position: fixed;
+  width: calc(60 / 100 * 66.666%);
+  height: 6rem;
+  transform: translateX(-2.1rem);
+  background-color: rgb(209, 207, 207);
+  transition: all 0.2s;
+  align-items: center;
+  top: 0;
+}
+.contact_info_header .chatIcons {
+  justify-self: flex-end;
+}
+
+.contact_info_header .userInfo h1 {
+  margin-bottom: 0%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.message_start {
+  margin-bottom: 10rem;
+}
+.userInfo {
+  width: 100%;
+}
+.chatHeader .userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.chatHeader .userInfo p {
+  margin-top: 0.5rem;
+}
+.chatHeader .userInfo h1 {
+  margin: 0%;
+  padding: 0%;
+  text-transform: capitalize;
+}
+.chatIcons {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  width: 10rem;
+}
+
+.chatIcons:last-child {
+  margin-right: 2rem;
+}
+
+.threeDots {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: none !important;
+  position: relative;
+}
+
+.dots_color {
+  background-color: rgb(172, 170, 170);
+}
+
+.box {
+  position: absolute;
+  top: 7vh;
+  right: 1vw;
+  background-color: #eee;
+  height: 17rem;
+  width: 15rem;
+  z-index: 100;
+  border-radius: 0.4rem;
+  box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.5);
+  animation-name: boxAnime;
+  animation-duration: 0.2s;
+  transition: all 0.2s;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+.box > * {
+  margin-bottom: 0%;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box > *:hover {
+  background-color: rgb(209, 207, 207);
+}
+.hide_box {
+  opacity: 0;
+  visibility: hidden;
+  width: 0%;
+  height: 0;
+}
+
+.chatIcons > * {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0s 0.5s;
+}
+
+.chatIcons > *:active {
+  background-color: rgb(172, 170, 170);
+  transition: 0s;
+}
+.chatIcons > *:hover {
+  cursor: pointer;
+}
+.AiOutlineSearch {
+  color: rgb(80, 80, 80);
+}
+.select_icon {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: rgb(80, 80, 80);
+}
+.select_icon:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+.profile_img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.right_text {
+  border-radius: 0.75rem;
+  background-color: #dcf8c6;
+  padding: 1rem;
+  width: fit-content;
+  max-width: 60%;
+  min-width: 20%;
+  flex-direction: column;
+  justify-self: right;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  margin-left: auto;
+  font-size: 1.4rem;
+  position: relative;
+}
+.right_text:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.left_text {
+  border-radius: 0.75rem;
+  background-color: #eee;
+  font-size: 1.4rem;
+  padding: 1rem;
+  width: fit-content;
+  max-width: 60%;
+  min-width: 20%;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  position: relative;
+  transition: all 0.2s;
+}
+
+.right_text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  right: 0;
+  top: 0;
+  background-color: #dcf8c6;
+  transform: translateX(0.8rem);
+  clip-path: polygon(100% 0, 0 0, 0 99%);
+}
+.left_text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  left: 0;
+  top: 0;
+  background-color: #eee;
+  transform: translateX(-0.8rem);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+.show_checkbox.left_text {
+  transform: translateX(2rem);
+}
+
+.left_text p {
+  z-index: 10;
+}
+.left_text:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.scrollMessage,
+.scrollMessage.right_text::after,
+.scrollMessage.left_text::after {
+  animation-name: scrollMsgAnime;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+.tick {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.tick_rotate {
+  width: 1.7rem;
+  height: 1.7rem;
+  transform: rotate(-8deg);
+}
+.metadata {
+  display: flex;
+  align-items: flex-end;
+  padding-left: 1.5vw;
+  align-self: flex-end;
+}
+.metadata > *:first-child {
+  transform: translateY(-2px);
+}
+.metadata p {
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+}
+
+.input_container {
+  position: fixed;
+  bottom: 0vh;
+  left: 33.333vw;
+  width: 67%;
+  height: 7rem;
+  background-color: rgb(209, 207, 207);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 1000;
+  transition: all 0.2s;
+}
+.contact_info_input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact_info_input .input_container {
+  width: calc(60 / 100 * 66.666%);
+}
+.input input[type="text"] {
+  font-size: 1.6rem;
+}
+
+.input {
+  width: 83%;
+  padding: 1.3rem;
+  border: none;
+  display: block;
+  border-radius: 50rem;
+  margin-left: 4vw;
+  /* outline-color: rgb(168, 233, 104); */
+  outline: none;
+  transition: all 0.65s;
+  font-size: 1.6rem;
+}
+
+.MdSend {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  background-color: rgb(168, 233, 104);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  cursor: pointer;
+  transition: all 0.65s;
+  margin-right: -1vw;
+  border: none;
+  outline: none;
+}
+.MdSend:hover {
+  background-color: rgb(131, 238, 25);
+}
+.arrow_left {
+  color: rgb(80, 80, 80);
+  display: none;
+}
+
+.msg_parent {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: content-box;
+  transform: translateX(-2rem);
+}
+
+.msg_parent:hover {
+  cursor: pointer;
+  background-color: rgba(0, 150, 136, 0.08);
+}
+.selected {
+  background-color: rgba(0, 150, 136, 0.1);
+}
+.checkbox {
+  height: 1.7rem;
+  width: 1.7rem;
+  display: inline-block;
+  cursor: pointer;
+  transform: translateX(-1.3rem);
+  border: 2px solid rgb(80, 80, 80);
+  border-radius: 0.2rem;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -30vw;
+  transition: all 0.2s;
+}
+.show_checkbox .checkbox {
+  left: 3vw;
+  opacity: 1;
+  visibility: visible;
+}
+.tick {
+  color: #eee;
+  background-color: #009688;
+}
+.show_tick {
+  opacity: 0;
+}
+.checkbox span {
+  opacity: 0;
+  transition: all 0.2s;
+}
+.show_tick:checked ~ .checkbox {
+  border: 2px solid #009688;
+}
+.show_tick:checked ~ .checkbox span {
+  opacity: 1;
+}
+
+.selected_msgs {
+  position: fixed;
+  left: 33.333%;
+  bottom: -20vh;
+  z-index: 10000;
+  display: grid;
+  grid-template-columns: 1fr 5fr repeat(4, 1fr);
+  width: 66.666%;
+  height: 6rem;
+  align-items: center;
+  background-color: rgb(209, 207, 207);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+.show .selected_msgs {
+  opacity: 1;
+  visibility: visible;
+  bottom: 0%;
+}
+.showMessageInfo .selected_msgs {
+  width: calc(60 / 100 * 66.666%);
+}
+.selected_msgs > * {
+  margin: 0%;
+  font-size: 1.6rem;
+}
+
+.selected_msgs > *:not(:nth-child(2)) {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0s 0.5s;
+}
+.selected_msgs > *:first-child {
+  position: relative;
+  transform: translateX(1rem);
+}
+
+.selected_msgs > *:not(:nth-child(2)):active {
+  background-color: rgb(172, 170, 170);
+  transition: 0s;
+}
+
+.selected_msgs p:first-child span {
+  height: 2px;
+  width: 2rem;
+  background-color: rgb(80, 80, 80);
+  display: block;
+  transform: translateX(1.5rem) rotate(135deg);
+  position: absolute;
+  left: -5px;
+}
+.selected_msgs p:first-child span::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 2rem;
+  background-color: rgb(80, 80, 80);
+  transform: translateY(-2.2rem) rotate(90deg);
+}
+.selected_msgs p:first-child span,
+.selected_msgs p:first-child span::after {
+  cursor: pointer;
+}
+
+.scroll_bottom {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 8rem;
+  right: 2rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+.setShowScroll .scroll_bottom {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+@keyframes scrollMsgAnime {
+  50% {
+    background-color: rgb(94, 91, 91);
+  }
+}
+
+@keyframes boxAnime {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .input {
+    width: 70%;
+  }
+  .checkbox {
+    transform: translateX(-2.5rem);
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .input {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin-left: 0;
+    width: 100%;
+  }
+  .display_hiden {
+    display: none;
+  }
+  .chatHeader {
+    width: 100%;
+  }
+  .input_container {
+    width: 100%;
+    left: 0;
+  }
+  .arrow_left {
+    display: inline;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .spinner {
+    width: 100vw;
+    height: 100vh;
+    margin-left: 0%;
+    z-index: 10000;
+  }
+  .spinner .chatHeader {
+    left: 2rem;
+  }
+  .right_text,
+  .left_text {
+    max-width: 90%;
+    min-width: 30%;
+  }
+  .selected_msgs {
+    left: 0;
+    width: 100%;
+  }
+  .msg_parent {
+    width: 103%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .selected_msgs {
+    grid-template-columns: 1fr 2fr repeat(4, 1fr);
+  }
+  .show_checkbox .checkbox {
+    left: 6vw;
+  }
+  .right_text,
+  .left_text {
+    min-width: 35%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .MdSend {
+    margin-right: 4vw;
+  }
+  .chatIcons {
+    width: 20vw;
+  }
+}

@@ -1,0 +1,208 @@
+.container {
+  position: fixed;
+  height: calc(100vh - 6rem);
+  width: 0%;
+  background-color: #eee;
+  top: 6rem;
+  right: 0;
+  color: black;
+  font-size: 1.6rem;
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  transition: all 0.2s;
+}
+.showSearchMessage .container {
+  width: 26.75vw;
+}
+.header {
+  position: fixed;
+  top: 0%;
+  right: 0;
+  background-color: rgb(209, 207, 207);
+  width: 26.75vw;
+  height: 6rem;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.showSearchMessage .header {
+  opacity: 1;
+  visibility: visible;
+}
+.header div {
+  transform: translateX(3rem);
+}
+.header P:first-child {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0s 0.5s;
+}
+
+.header p:first-child:active {
+  background-color: rgb(172, 170, 170);
+  transition: 0s;
+}
+
+.header p {
+  margin: 0%;
+}
+
+.header p:first-child span {
+  height: 2px;
+  width: 2rem;
+  background-color: rgb(80, 80, 80);
+  display: block;
+  transform: translateX(1.5rem) rotate(135deg);
+  position: absolute;
+  left: -5px;
+}
+.header p:first-child span::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 2rem;
+  background-color: rgb(80, 80, 80);
+  transform: translateY(-2.2rem) rotate(90deg);
+}
+.header p:first-child span,
+.header p:first-child span::after {
+  cursor: pointer;
+}
+.messages {
+  background-color: #fff;
+  display: grid;
+  grid-template-rows: 6rem;
+  grid-auto-rows: 6rem;
+  line-height: 1;
+  width: 26.75vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.no_messages {
+  margin: auto;
+  color: #767676;
+}
+
+.message {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+}
+.message:hover {
+  cursor: pointer;
+  background-color: rgb(218, 214, 214);
+}
+.content {
+  display: flex;
+  align-items: center;
+}
+.content p {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+  width: 24.5vw;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.search__white {
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.search input {
+  border: none;
+  border-top-right-radius: 50rem;
+  border-bottom-right-radius: 50rem;
+  width: 80%;
+  height: 4rem;
+  outline: none;
+}
+
+.search div {
+  border-top-left-radius: 50rem;
+  border-bottom-left-radius: 50rem;
+  background-color: #fff;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 5rem;
+}
+.date {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+}
+.AiOutlineArrowLeft {
+  transform: rotate(0deg);
+  transition: all 0.2s;
+  background-color: transparent !important;
+}
+
+.AiOutlineArrowBottom {
+  transform: rotate(-90deg);
+  transition: all 0.2s;
+  background-color: transparent !important;
+  visibility: hidden;
+  opacity: 0;
+}
+.AiOutlineSearch__hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(2.5rem) rotate(180deg);
+  transition: all 0.2s;
+  background-color: transparent !important;
+}
+.AiOutlineSearch {
+  transition: all 0.2s;
+  background-color: transparent !important;
+  transform: translateX(2.5rem) rotate(0deg);
+}
+
+@media only screen and (max-width: 1125px) {
+  .showSearchMessage .container {
+    width: 66.75vw;
+    z-index: 1000;
+  }
+
+  .showSearchMessage .header {
+    width: 66.75vw;
+  }
+  .showSearchMessage .messages {
+    width: 66.75vw;
+  }
+  .showSearchMessage .content p {
+    width: 64vw;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .showSearchMessage .container {
+    width: 100vw;
+    z-index: 1000;
+  }
+
+  .showSearchMessage .header {
+    width: 100vw;
+  }
+  .showSearchMessage .messages {
+    width: 100vw;
+  }
+  .showSearchMessage .content p {
+    width: 95vw;
+  }
+}

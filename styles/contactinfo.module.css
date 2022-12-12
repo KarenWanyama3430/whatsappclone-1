@@ -1,0 +1,241 @@
+.container {
+  position: fixed;
+  height: calc(100vh - 6rem);
+  width: 26.75vw;
+  background-color: #eee;
+  top: 6rem;
+  right: 0;
+  color: black;
+  font-size: 1.6rem;
+  line-height: 2;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 6fr minmax(10rem, 1fr) repeat(2, minmax(5rem, 1fr));
+  grid-auto-rows: minmax(5rem, 1fr);
+  row-gap: 2rem;
+}
+.container div:not(:first-child) {
+  background-color: white;
+  animation-name: contactAnime;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  /* border-top: 1px solid rgb(197, 196, 196); */
+  box-shadow: 0 1px 1px rgb(197, 196, 196);
+  /* border-bottom: 1px solid rgb(197, 196, 196); */
+}
+
+.lastSeen {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.4rem;
+}
+.end {
+  background-color: #eee !important;
+}
+.profile_info {
+  display: grid;
+  grid-template-rows: 4fr minmax(9rem, 1.5fr);
+}
+.profile_info > *:first-child {
+  justify-self: center;
+}
+.nameInfo {
+  padding-left: 4rem;
+}
+.nameInfo h1 {
+  text-transform: capitalize;
+}
+.profile_img {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+.contactinfo_header {
+  position: fixed;
+  top: 0%;
+  right: 0;
+  background-color: rgb(209, 207, 207);
+  width: 26.75vw;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+}
+
+.x_1,
+.x_1::after {
+  width: 2rem;
+  height: 2px;
+  border-radius: 0.8rem;
+  transform: rotate(135deg);
+  display: block;
+  background-color: rgb(80, 80, 80);
+}
+.x_1::after {
+  content: "";
+  transform: translateY(-22px) rotate(90deg);
+}
+.rotate > * {
+  display: block;
+  background-color: rgb(80, 80, 80);
+}
+.rotate {
+  cursor: pointer;
+  animation: none;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0s 0.5s;
+}
+.rotate:active {
+  background-color: rgb(172, 170, 170);
+  transition: 0s;
+}
+.contactinfo_header > * {
+  margin-left: 3rem;
+  margin-bottom: 0%;
+}
+
+.danger {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  align-items: center;
+}
+.danger div {
+  margin: 0;
+  padding: 0%;
+  justify-self: center;
+  transform: translateY(0.3rem);
+}
+
+.danger:hover {
+  cursor: pointer;
+  background-color: rgb(219, 217, 217) !important;
+}
+
+.danger div:first-child {
+  color: rgb(80, 80, 80);
+}
+
+.noti {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.action {
+  padding-left: 2rem;
+}
+.a_e {
+  margin: 0;
+  color: #00bfa5;
+}
+.status {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 24vw;
+  white-space: nowrap;
+}
+.email {
+  transform: translateY(-10px);
+}
+.icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon span {
+  margin-right: 5rem;
+  cursor: pointer;
+}
+
+.icon p {
+  margin-bottom: 0.5rem;
+}
+
+.border {
+  height: 1px;
+  width: 25.9vw;
+  background-color: rgb(197, 196, 196);
+  margin: 1rem 0;
+  transform: translateY(-0.5rem);
+}
+
+.mld {
+  padding-top: 2rem;
+}
+
+.mld div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mld div h3 {
+  margin: 0%;
+}
+
+.mld div span {
+  margin-right: 5rem;
+  cursor: pointer;
+}
+
+.mute {
+  display: flex;
+  justify-content: space-between;
+}
+.mute span {
+  height: 2rem;
+  width: 2rem;
+  border: 3px solid grey;
+  border-radius: 0.2rem;
+  margin-right: 5rem;
+  cursor: pointer;
+}
+
+@keyframes contactAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+  .container {
+    width: 66.75vw;
+    z-index: 1000;
+  }
+  .contactinfo_header {
+    width: 66.75vw;
+  }
+  .border {
+    width: 63vw;
+  }
+  .status {
+    width: 63vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+    z-index: 1000;
+  }
+  .contactinfo_header {
+    width: 100vw;
+  }
+  .border {
+    width: 100vw;
+  }
+  .status {
+    width: 95vw;
+  }
+}
